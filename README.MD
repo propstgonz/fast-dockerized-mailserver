@@ -56,7 +56,7 @@ mailserver/                   # Project root
 Clone or upload the project to your server:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/propstgonz/fast-dockerized-mailserver
 # or use SFTP to upload it
 cd mailserver
 ```
