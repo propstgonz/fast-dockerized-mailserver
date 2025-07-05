@@ -1,0 +1,1 @@
+mail._domainkey.{your-domain} {your-domain}:mail:/etc/opendkim/keys/{your-domain}/default.private

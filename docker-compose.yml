@@ -1,0 +1,23 @@
+services:
+  mailserver:
+    image: mailserver/docker-mailserver:latest
+    container_name: mailserver
+    hostname: mail
+    domainname: mail.{your-domain}
+    env_file: ./config/mailserver.env
+    environment:
+      - SSL_TYPE=manual
+      - SSL_CERT_PATH=/etc/ssl/certs/fullchain.pem
+      - SSL_KEY_PATH=/etc/ssl/private/server.key
+    ports:
+      - "25:25"    # SMTP
+      - "587:587"  # Submission (STARTTLS)
+      - "143:143"  # IMAP
+      - "993:993"  # IMAPS (SSL/TLS)
+    volumes:
+      - /var/mail:/var/mail # Consider migrating this volume to a RAID array for redundancy.
+      - ./data/state:/var/mail-state
+      - ./config:/tmp/docker-mailserver
+      - ./config/certs/fullchain.pem:/etc/ssl/certs/fullchain.pem:ro
+      - ./config/certs/server.key:/etc/ssl/private/server.key:ro
+    restart: always
