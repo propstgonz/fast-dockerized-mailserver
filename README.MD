@@ -25,7 +25,7 @@ This guide provides complete instructions for deploying and maintaining a secure
 Make sure you have:
 
 - A **registered domain name** (e.g., `example.com`) with DNS access
-- A **VPS or server** with a **public static IP**
+- A **VPS or server** with a **public static IP (Not obligatory, but highly recommended)**
 - **Docker** (v20.10+): [Install Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose** (v1.29+): [Install Docker Compose](https://docs.docker.com/compose/install/)
 - Open firewall ports **25**, **143**, **587**, and **993**
