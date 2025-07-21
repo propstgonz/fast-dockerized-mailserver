@@ -57,7 +57,6 @@ Clone or upload the project to your server:
 
 ```bash
 git clone https://github.com/propstgonz/fast-dockerized-mailserver
-# or use SFTP to upload it
 cd mailserver
 ```
 
@@ -222,8 +221,8 @@ tar -czf backup-$(date +%F).tar.gz ./data
 Keep the image up to date:
 
 ```bash
-docker-compose pull
-docker-compose up -d
+docker compose pull
+docker compose up -d
 ```
 
 ### SSL Certificate Renewal
